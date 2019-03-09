@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import { BrowserRouter, Route,Switch} from "react-router-dom"
 import './App.css';
 
-
+function Login(){
+  return <div>Login</div>
+}
+function Main(){
+  return <div>Main</div>
+}
 class App extends Component {
   render() {
     return (
-      <div>
-        初始化项目
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route path="/home" component={Main} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
